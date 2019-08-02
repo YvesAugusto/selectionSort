@@ -31,9 +31,10 @@ def selectionSort(alist):
    for fillslot in range(len(alist)-1,0,-1):
        positionOfMax=0
        for location in range(1,fillslot+1):
+           count+=1
            if alist[location]>alist[positionOfMax]:
                positionOfMax = location
-               count+=1
+
 
        temp = alist[fillslot]
        alist[fillslot] = alist[positionOfMax]
@@ -43,7 +44,7 @@ def selectionSort(alist):
 
 listas=[]
 listaInversa=[]
-x2 = [10000,20000,50000,100000]
+x2 = [100,200,500,1000]
 y = []
 y2=[]
 
@@ -65,5 +66,7 @@ for i in range(4):
   print("Terminou de ordenar um vetor de tamanho " + str(x2[i]) + "...")
 
 operacoes2=operacoes
+print(aux)
+print(operacoes2)
 desenhaGrafico(x2,y,y2,'Quantidade','Tempo', 'selection')
 desenhaGrafico(x2,aux,operacoes2,'Quantidade','Swaps', 'selectionSwap')
