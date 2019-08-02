@@ -44,7 +44,7 @@ def selectionSort(alist):
 
 listas=[]
 listaInversa=[]
-x2 = [100,200,500,1000]
+x2 = [10000,20000,50000,100000]
 y = []
 y2=[]
 
@@ -57,16 +57,12 @@ for i in range(4):
 for i in range(4):
   y.append(timeit.timeit("selectionSort({})".format(listas[i]),setup="from __main__ import selectionSort",number=1))
   print("Terminou de ordenar um vetor de tamanho " + str(x2[i]) + "...")
-
-aux=operacoes
-operacoes=[]
   
 for i in range(4):
   y2.append(timeit.timeit("selectionSort({})".format(listaInversa[i]),setup="from __main__ import selectionSort",number=1))
   print("Terminou de ordenar um vetor de tamanho " + str(x2[i]) + "...")
 
-operacoes2=operacoes
-print(aux)
-print(operacoes2)
+print(operacoes[0:4])
+print(operacoes[4:])
 desenhaGrafico(x2,y,y2,'Quantidade','Tempo', 'selection')
-desenhaGrafico(x2,aux,operacoes2,'Quantidade','Swaps', 'selectionSwap')
+desenhaGrafico(x2,operacoes[0:4],operacoes[4:8],'Quantidade','Swaps', 'selectionSwap')
